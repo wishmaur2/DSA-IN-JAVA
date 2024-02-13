@@ -1,25 +1,30 @@
-//Question 1 : In a program, input 3 numbers : A, B and C. You have to output the average of these 3 numbers.
-// (Hint : Average of N numbers is sum of those numbers divided by N)
+package PracticalQuestion;
+/* 
+Print the number of 7’s that are inthe 2d array.
+Example :
+Input - int[][] array = { {4,7,8},{8,8,7} };
+Output - 2
 
-import java.util.Scanner;
+*/
 
 public class Q1 {
-    public static void main (String args[]){
-    
-        System.out.println("Enter First No.");
-        Scanner s1=new Scanner(System.in);
-        int a=s1.nextInt();
-        System.out.println("Enter Second No.");
-        Scanner s2=new Scanner(System.in);
-        int b=s2.nextInt();
-        System.out.println("Enter Third No.");
-        Scanner s3=new Scanner(System.in);
-        int c=s3.nextInt();
+    public static void countNumber(int matrix[][]){
+        int count=0;
+        for(int i=0; i<matrix.length;i++){
+          for(int j=0;j<matrix[0].length;j++){
+            if(matrix[i][j]==7){
+              count++;
+            }
+          }
+        }
+        System.out.println(count);
+    }
 
-        int avg=a+b+c/3;
-        System.out.println("AVG Of Three NO. "+ avg);
+    public static void main(String args[]){
+        int[][] array = { {4,7,8},
+                          {8,8,7} };
         
-
+        countNumber(array);
     }
     
 }
